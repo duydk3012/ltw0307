@@ -8,7 +8,7 @@ import org.springframework.data.repository.query.Param;
 import java.util.List;
 
 public interface ChapterRepository extends JpaRepository<Chapter, Integer> {
-    @Query("SELECT c FROM Chapter c WHERE c.id = :chapterId AND c.manga.id = :mangaId")
+    @Query("SELECT c FROM Chapter c WHERE c.id = :id AND c.mangaId = :manga_id")
     Chapter findByIdAndMangaId(
             @Param("chapterId") Integer chapterId,
             @Param("mangaId") Integer mangaId
